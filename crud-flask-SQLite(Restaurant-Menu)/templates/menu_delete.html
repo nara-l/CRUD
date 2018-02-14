@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Delete {{menu_item.name}} menu </title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}" />
+    <body>
+        <h1>Are you sure you want to Delete {{menu_item.name}} menu?</h1>
+        <div>
+            <form method="post" action="{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = menu_item.id)}}">
+                <input type="submit" name="submit" value="Confirm delete menu" class="btn"> &nbsp; <a href=" {{url_for('show_menu', restaurant_id= restaurant.id)}}" > Cancel </a>
+            </form>
+        </div>
+    </body>
+</html>

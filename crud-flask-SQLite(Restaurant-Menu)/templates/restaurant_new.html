@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Create new Restaurant </title>
+        <link href="{{ url_for('static', filename='style.css')}}" rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <h1>Create new Restaurant</h1>
+        <div class="form">
+            <form method="post" action="{{url_for('newRestaurant')}}">
+                <label> Restaurant name </label><input type="text" size="20" name="restaurant_name" >
+                <input type="submit" name="submit" value="Create Restaurant" class="submit btn">  &nbsp; <a href=" {{url_for('restaurants')}}" > Cancel </a>
+            </form>
+        </div>
+    </body>
+</html>

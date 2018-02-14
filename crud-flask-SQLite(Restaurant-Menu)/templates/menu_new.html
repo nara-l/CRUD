@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Create new menu </title>
+        <link href="{{ url_for('static', filename='style.css')}}" rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <h1>Create new Menu for {{restaurant.name}}</h1>
+        <div class="form">
+            <form method="post" action="{{url_for('newMenuItem', restaurant_id = restaurant.id)}}">
+                <label> Menu name </label><input type="text" size="20" name="menu_name" > 
+                <label> Menu price </label><input type="text" name="menu_price">
+                <label> Menu description </label><textarea name="menu_description" placeholder="describe this menu"> </textarea> 
+                <input type="submit" name="submit" value="Create Menu" class="submit btn">  &nbsp; <a href=" {{url_for('show_menu', restaurant_id= restaurant.id)}}" > Cancel </a>
+            </form>
+        </div>
+    </body>
+</html>
